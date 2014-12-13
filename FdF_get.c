@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 02:50:39 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/13 04:33:18 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/13 04:36:44 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ void	get_coors(char **split, t_coor ****tab)
 	{
 		tab[y][x]->y = i;
 		tab->z = ft_atoi(*tab[x][y]);
-		*tab++;
+		**tab++;
 		i++;
 	}
-	return (res);
 }
 
 void	get_nbr(const int fd, t_coor ****tab)
@@ -40,7 +39,7 @@ void	get_nbr(const int fd, t_coor ****tab)
 	{
 		split = ft_strsplit(buff);
 		get_coors(split, &tab);
-		**tab++;
+		*tab++;
 		tab->x++;
 	}
 }
