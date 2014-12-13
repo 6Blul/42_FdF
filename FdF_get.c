@@ -5,53 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 05:27:49 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/13 00:57:39 by spochez          ###   ########.fr       */
+/*   Created: 2014/12/13 02:50:39 by spochez           #+#    #+#             */
+/*   Updated: 2014/12/13 04:31:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
 #include <mlx.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include "fdf.h"
 
-t_coor	***get_nbr(int fd)
+void	get_coors(char **split, t_coor ****tab)
 {
-	char			*oui;
-	static char		**split;
-	t_coor			***pt;
-	t_con			tent;
+	int		i;
 
-	if (tent.j == 0)
+	i = 0;
+	while (split[i])
 	{
-		get_next_line(fd, &oui);
-		split = ft_strsplit(oui, ' ');
+		tab[y][x]->y = i;
+		tab->z = ft_atoi(*tab[x][y]);
+		i++;
 	}
-	if (oui == NULL)
-	{
-		pt = NULL;
-		return (pt);
-	}
-	pt.x = tent.i;
-	pt.z = ft_atoi(split[tent.j]);
-	pt.y = tent.j;
-	if (!split[tent.j + 1])
-	{
-		tent.j = 0;
-		tent.i++;
-	}
-	else
-		tent.j++;
-	return (pt);
+	return (res);
 }
 
-void	treat_nbr(char *file)
+void	get_nbr(const int fd, t_coor ****tab)
 {
-	int			fd;
-	t_coor		***pt;
+	char	*buff;
+	char	**split;
+
+	tab->x = 0;
+	while (get_next_line(fd, &buff) > 0)
+	{
+		split = ft_strsplit(buff);
+		get_coors(split, &tab);
+		**tab++;
+		tab->x++;
+	}
+}
+
+t_coor	***treat_nbr(char *file)
+{
+	const int	fd;
+	t_coor		***tab;
 
 	fd = open(file, O_RDONLY);
-	while (pt != NULL)
-	{
-		pt = get_nbr(fd);
-	}
+	get_nbr(fd, &tab);
 }
