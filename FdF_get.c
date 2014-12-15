@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 02:50:39 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/15 01:38:21 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/15 22:30:46 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,28 @@
 #include "fdf.h"
 #include "../Libft/includes/libft.h"
 
-
-void	fill_struct(char **split, t_coor ****pts)
-{
-	int		i;
-
-	i = 0;
-	while (split[i])
-	{
-		pts->z = ft_atoi(split[i]);
-		pts->y = i;
-		i++;
-	}
-}
-
 void	get_nbr(int fd)
 {
-	t_coor	***pts;
+	t_coor	**pts;
 	char	*buff;
 	char	**split;
+	int		i;
+	int		j;
 
-	pts.x = 0;
+	pts = NULL;
+	i = 0;
 	while (get_next_line(fd, &buff) > 0)
 	{
+		j = 0;
+		pts[i][j].x = i;
 		split = ft_strsplit(buff, ' ');
-		fill_struct(split, &pts);
-		pts.x++;
+		while (split[j])
+		{
+			pts[i][j].y = j;
+			pts[i][j].z = ft_atoi(split[j]);
+			j++;
+		}
+		i++;
 	}
 }
 
