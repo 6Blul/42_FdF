@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 02:50:39 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 00:15:11 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/16 00:32:26 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include "fdf.h"
-#include "../Libft/includes/libft.h"
+#include "Libft/includes/libft.h"
 
 void	get_nbr(int fd)
 {

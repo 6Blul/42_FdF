@@ -6,12 +6,11 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 23:14:30 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 00:13:13 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/16 00:21:34 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/includes/libft.h"
-#include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
 
