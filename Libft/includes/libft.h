@@ -6,14 +6,14 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 10:58:56 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/15 23:09:16 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/16 00:14:08 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 5
 # include <string.h>
+# define BUFF_SIZE 5
 
 int		ft_atoi(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
