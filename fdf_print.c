@@ -6,11 +6,12 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 03:43:18 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 04:24:45 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/16 04:44:47 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
+#include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
