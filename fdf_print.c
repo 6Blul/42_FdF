@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   fdf_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 04:59:22 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 03:59:35 by spochez          ###   ########.fr       */
+/*   Created: 2014/12/16 03:43:18 by spochez           #+#    #+#             */
+/*   Updated: 2014/12/16 03:44:28 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-
-typedef struct		s_coor
-{
-	double 		x;
-	double 		y;
-	double 		z;
-}					t_coor;
-
-typedef struct		s_coun
-{
-	int		i;
-	int		j;
-}					t_coun;
-
-typedef struct		s_winsize
-{
-	int			x;
-	int			y;
-}					t_winsize;
-
-void	treat_nbr(char *file);
-void	print_window(t_coor ****pts, t_winsize *sze);
-
-#endif
+#include <mlx.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "fdf.h"
+#include "Libft/includes/libft.h"
