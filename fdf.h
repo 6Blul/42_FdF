@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 04:59:22 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 03:59:35 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/16 04:10:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct		s_coor
 
 typedef struct		s_coun
 {
-	int		i;
-	int		j;
+	int			i;
+	int			j;
 }					t_coun;
 
 typedef struct		s_winsize
@@ -33,6 +33,6 @@ typedef struct		s_winsize
 }					t_winsize;
 
 void	treat_nbr(char *file);
-void	print_window(t_coor ****pts, t_winsize *sze);
+void	print_window(t_coor ***pts, t_winsize *sze);
 
 #endif
