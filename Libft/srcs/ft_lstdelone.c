@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:00:28 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 03:33:21 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/10 03:04:37 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/10 03:28:12 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	char	*res;
-
-	res = malloc(sizeof(char) * size + 1);
-	if (res == NULL)
-		return (NULL);
-	else
-		ft_bzero((void *)res, size + 1);
-	return (res);
+	(*del)((*alst)->content, (*alst)->content_size);
+	ft_memdel((void **)alst);
 }

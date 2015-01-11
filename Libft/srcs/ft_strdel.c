@@ -6,14 +6,14 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 14:57:27 by spochez           #+#    #+#             */
-/*   Updated: 2014/11/12 20:15:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/11 03:37:24 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as && *as)
+		ft_memdel((void **)as);
 }

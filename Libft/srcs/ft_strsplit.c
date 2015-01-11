@@ -6,7 +6,7 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 13:20:29 by spochez           #+#    #+#             */
-/*   Updated: 2014/11/13 11:35:43 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/11 03:45:22 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,17 @@ char			**ft_strsplit(char const *s, char c)
 	char			**res;
 	unsigned int	len;
 
-	len = ft_count_str(s, c);
-	res = NULL;
-	if (s == NULL)
-		return (NULL);
-	res = (char **)malloc(sizeof(char *) * (len + 1));
-	if (!res)
-		return (NULL);
-	ft_put_in(res, (char *)s, c);
-	res[len] = 0;
-	len = 0;
-	return (res);
+	if (s)
+	{
+		len = ft_count_str(s, c);
+		res = NULL;
+		res = (char **)malloc(sizeof(char *) * (len + 1));
+		if (!res)
+			return (NULL);
+		ft_put_in(res, (char *)s, c);
+		res[len] = 0;
+		len = 0;
+		return (res);
+	}
+	return (NULL);
 }

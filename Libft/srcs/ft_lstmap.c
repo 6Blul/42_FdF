@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:00:28 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 03:33:21 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/10 04:48:18 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/11 04:56:49 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char	*res;
+	t_list	*new;
+	t_list	*res;
 
-	res = malloc(sizeof(char) * size + 1);
-	if (res == NULL)
-		return (NULL);
-	else
-		ft_bzero((void *)res, size + 1);
-	return (res);
+	if (lst)
+	{
+		new = (*f)(lst);
+		res = new;
+		while (lst->next != NULL)
+		{
+			new->next = (*f)(lst->next);
+			lst = lst->next;
+			new = new->next;
+		}
+		return (res);
+	}
+	return (NULL);
 }

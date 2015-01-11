@@ -6,7 +6,7 @@
 #    By: spochez <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/06 17:47:13 by spochez           #+#    #+#              #
-#    Updated: 2014/12/16 00:14:50 by spochez          ###   ########.fr        #
+#    Updated: 2015/01/10 02:48:56 by spochez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,14 @@ SRC =	$(F)ft_atoi.c		\
 		$(F)ft_strtrim.c	\
 		$(F)ft_tolower.c	\
 		$(F)ft_toupper.c	\
-		$(F)get_next_line.c	\
+		$(F)ft_isupper.c	\
+		$(F)ft_islower.c	\
+		$(F)ft_lstdelone.c	\
+		$(F)ft_lstnew.c		\
+		$(F)ft_lstdel.c		\
+		$(F)ft_lstadd.c		\
+		$(F)ft_lstiter.c	\
+		$(F)ft_lstmap.c		\
 
 OBJ =	ft_atoi.o		\
 		ft_bzero.o		\
@@ -129,7 +136,14 @@ OBJ =	ft_atoi.o		\
 		ft_strtrim.o	\
 		ft_tolower.o	\
 		ft_toupper.o	\
-		get_next_line.o	\
+		ft_isupper.o	\
+		ft_islower.o	\
+		ft_lstdelone.o	\
+		ft_lstnew.o		\
+		ft_lstdel.o		\
+		ft_lstadd.o		\
+		ft_lstiter.o	\
+		ft_lstmap.o		\
 
 CFLAGS += -I./includes -Wall -Wextra -Werror -I$(I)
 

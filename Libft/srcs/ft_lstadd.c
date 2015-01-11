@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:00:28 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 03:33:21 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/10 04:39:37 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/10 04:42:14 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	char	*res;
-
-	res = malloc(sizeof(char) * size + 1);
-	if (res == NULL)
-		return (NULL);
-	else
-		ft_bzero((void *)res, size + 1);
-	return (res);
+	if (*alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }
