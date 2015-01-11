@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_getnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 04:59:22 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 07:26:58 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/11 07:25:57 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/11 07:47:53 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "fdf.h"
 
-typedef struct		s_coor
+t_coor	**ft_getnbr(char *file)
 {
-	double 		x;
-	double 		y;
-	double 		z;
-}					t_coor;
+	t_coor	**pts;
+	char	**sp;
+	char	**nbs;
+	int		i;
+	int		j;
 
-typedef struct		s_winsize
-{
-	int			x;
-	int			y;
-}					t_winsize;
-
-#endif
+	i = 0;
+	j = 0;
+	sp = ft_strsplit(file, '\n');
+	while (sp[i])
+	{
+		nbs = ft_strsplit(sp[i], ' ');
+		while (nbs[j])
+		{
+			pts.x = i;
+			pts.y = j;
+			pts.z = ft_atoi(nbs[j]);
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (pts);
+}

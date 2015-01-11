@@ -6,11 +6,12 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 23:14:30 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/16 01:05:37 by spochez          ###   ########.fr       */
+/*   Updated: 2014/12/23 13:01:24 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "Libft/includes/libft.h"
+#include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -59,13 +60,11 @@ int		get_next_line(int const fd, char **line)
 	static char	*buff;
 	int			rd;
 	char		*ret;
-	
-	if (*line == NULL)
+
+	rd = 0;
+	if (BUFF_SIZE <= 0 || fd < 0 || *line == NULL)
 		return (-1);
 	*line = NULL;
-	rd = 0;
-	if (BUFF_SIZE <= 0 || fd < 0)
-		return (-1);
 	if (!buff)
 	{
 		buff = (char *)malloc(sizeof(char) * BUFF_SIZE + 1);
