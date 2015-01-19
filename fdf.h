@@ -6,12 +6,13 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 04:59:22 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 07:26:58 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/19 09:37:50 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
+# define BUFF_SIZE 12
 
 typedef struct		s_coor
 {
@@ -20,10 +21,6 @@ typedef struct		s_coor
 	double 		z;
 }					t_coor;
 
-typedef struct		s_winsize
-{
-	int			x;
-	int			y;
-}					t_winsize;
+t_coor				**ft_getnbr(char *file);
 
 #endif
