@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:00:28 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/11 03:33:21 by spochez          ###   ########.fr       */
+/*   Created: 2014/11/04 13:37:48 by spochez           #+#    #+#             */
+/*   Updated: 2014/11/12 20:14:54 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "fdf.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char	*res;
+	int	i;
 
-	res = malloc(sizeof(char) * size + 1);
-	if (res == NULL)
-		return (NULL);
-	else
-		ft_bzero((void *)res, size + 1);
-	return (res);
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = 0;
+	return (dst);
 }

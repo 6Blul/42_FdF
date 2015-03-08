@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/31 19:25:19 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/31 19:39:24 by spochez          ###   ########.fr       */
+/*   Created: 2014/11/05 09:52:12 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/12 06:44:06 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-int		ft_isupper(char c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	return (c >= 'a' && c <= 'z');
+	unsigned int	ch;
+	unsigned char	*str;
+
+	ch = 0;
+	str = (unsigned char *)b;
+	if (len == 0)
+		return (b);
+	while (ch < len)
+	{
+		str[ch] = (unsigned char)c;
+		ch++;
+	}
+	return (b);
 }

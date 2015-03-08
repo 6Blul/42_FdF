@@ -1,39 +1,40 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 09:33:51 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/19 09:47:28 by spochez          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fdf.h"
 
-int		main(int ac, char **av)
+int		main(void)
 {
-	int		i;
-	int		nb;
-	int		fd;
-	t_coor	**pts;
+	int		**tab;
 
-	i = 1;
-	if (ac == 1)
-		ft_putstr("J'ai rien a lire !");
-	else if (ac >= 1)
-	{
-		while (i <= ac)
-		{
-			nb = 0;
-			fd = open(av[i], O_RDONLY);
-			while (get_next_line(fd, &line) > 0)
-			{
-				pts = ft_getnbr(line, nb);
-				nb++;
-			}
-		}
-	}
+	tab = (int **)malloc(sizeof(int *) * 6);
+	tab[0] = (int *)malloc(sizeof(int) * 6);
+	tab[1] = (int *)malloc(sizeof(int) * 6);
+	tab[2] = (int *)malloc(sizeof(int) * 6);
+	tab[3] = (int *)malloc(sizeof(int) * 6);
+	tab[4] = (int *)malloc(sizeof(int) * 6);
+	tab[0][0] = 0;
+	tab[0][1] = 0;
+	tab[0][2] = 10;
+	tab[0][3] = 0;
+	tab[0][4] = 0;
+	tab[1][0] = 0;
+	tab[1][1] = 0;
+	tab[1][2] = 10;
+	tab[1][3] = 0;
+	tab[1][4] = 0;
+	tab[2][0] = 0;
+	tab[2][1] = 0;
+	tab[2][2] = 10;
+	tab[2][3] = 0;
+	tab[2][4] = 0;
+	tab[3][0] = 0;
+	tab[3][1] = 0;
+	tab[3][2] = 10;
+	tab[3][3] = 0;
+	tab[3][4] = 0;
+	tab[4][0] = 0;
+	tab[4][1] = 0;
+	tab[4][2] = 10;
+	tab[4][3] = 0;
+	tab[4][4] = 0;
+	ft_fdf(tab);
 	return (0);
 }

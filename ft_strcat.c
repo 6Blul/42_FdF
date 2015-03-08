@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 11:44:39 by spochez           #+#    #+#             */
-/*   Updated: 2014/11/12 20:17:05 by spochez          ###   ########.fr       */
+/*   Created: 2014/11/05 09:43:08 by spochez           #+#    #+#             */
+/*   Updated: 2014/11/12 20:14:07 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
-	if ((!s1 && !s2) || n == 0)
-		return (0);
 	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
+		s1[i] = s2[j];
+		i++;
+		j++;
 	}
-	return (0);
+	s1[i] = 0;
+	return (s1);
 }

@@ -6,14 +6,11 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/26 23:14:30 by spochez           #+#    #+#             */
-/*   Updated: 2014/12/23 13:01:24 by spochez          ###   ########.fr       */
+/*   Updated: 2014/11/30 03:21:29 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/includes/libft.h"
-#include "get_next_line.h"
-#include <stdlib.h>
-#include <unistd.h>
+#include "fdf.h"
 
 char	*ft_putline(char **buff, char **line)
 {
@@ -61,10 +58,10 @@ int		get_next_line(int const fd, char **line)
 	int			rd;
 	char		*ret;
 
-	rd = 0;
-	if (BUFF_SIZE <= 0 || fd < 0 || *line == NULL)
-		return (-1);
 	*line = NULL;
+	rd = 0;
+	if (BUFF_SIZE <= 0 || fd < 0)
+		return (-1);
 	if (!buff)
 	{
 		buff = (char *)malloc(sizeof(char) * BUFF_SIZE + 1);
