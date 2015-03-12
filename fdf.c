@@ -9,7 +9,20 @@ void	ft_fdf(int **tab)
 	int 	z;
 	int 	gx;
 	int 	gy;
+	/*int 	tp;
+	int  	tp2;
 
+	tp = 0;
+	while(tab[tp])
+	{
+		tp2 = 0;
+		while (tab[tp][tp2])
+		{
+			printf("%i\n", tab[tp][tp2]);
+			tp2++;
+		}
+		tp++;
+	}*/
 	x = 0;
 	(void)tab;
 	mlx_ptr = mlx_init();
@@ -22,7 +35,6 @@ void	ft_fdf(int **tab)
 			gx = (cte1 * (x * 20)) - (cte2 * (y * 20));
 			z = tab[x][y];
 			gy = (cte1 / 2 * (x * 20)) + (cte2 / 2 * (y * 20)) - z;
-			printf("gy = %i, gx = %i\n", gy, gx);
 			mlx_pixel_put(mlx_ptr, win_ptr, gx + 200, gy + 200, 0xCCCCCC);
 			y++;
 		}
