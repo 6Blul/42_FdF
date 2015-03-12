@@ -20,10 +20,13 @@ OBJ = $(SRC:.c=.o)
 
 CFLAGS += -Wall -Werror -Wextra
 
+COMPL += -L/usr/X11/lib -lmlx -lXext -lX11 -lm
+
 all : $(NAME)
 
 $(NAME) :
-	gcc -c $(CFLAGS) $(SRC)
+	gcc -c $(CFLAGS) $(SRC) $(COMPL)
+	gcc -o a.out *.o $(COMPL)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

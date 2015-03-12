@@ -29,7 +29,9 @@ int		main(int ac, char **av)
 		tab = ft_getnbr(fd);
 		ft_fdf(tab);
 	}
-	else
+	else if (ac < 2)
 		ft_putstr("Rien a lire.\n");
+	else
+		ft_putstr("Trop de maps !\n");
 	return (0);
 }
